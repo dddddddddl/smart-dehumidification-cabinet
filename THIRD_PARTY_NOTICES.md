@@ -7,3 +7,5 @@ The ESP8266 uses its Arduino framework, ESP8266WebServer, ESP8266WiFi and Little
 The supplied command-generator workbook is preserved as the project configuration artifact. The opaque CI1302 firmware binary is retained locally and withheld from the public repository pending confirmation of redistribution permission; its implementation source and redistribution terms were not supplied. No authorship over vendor internals is inferred here.
 
 No repository-wide open-source license has been added.
+
+The original project README files refer to a Commitment Letter from the MEC202 teaching team at XJTLU. The letter itself is not included in the supplied archive. This repository does not reconstruct its terms or replace it with a new license.

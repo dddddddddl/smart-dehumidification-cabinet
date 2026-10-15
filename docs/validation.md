@@ -45,3 +45,11 @@ Native hardware files and the original voice workbook are preserved by byte-leve
 No physical cabinet, sensors, voice module, USB-to-TTL adapter, relays or servos were connected. No water collection, humidity transient, power/thermal, electrical isolation, voice accuracy or UV/purification efficacy experiment was performed.
 
 Specific source limitations remain: invalid temperature readings can leave a default/stale value; sleep disables cooling; the loaded humidity target is reset to 65 at boot; some web controls latch optimistic values; the voice UART/I²C relationship and command-index mismatches need device-level verification. Successful compilation does not resolve these integration points.
+
+## Follow-up factual review
+
+On October 16, 2026, a file-origin audit accounted for all 104 repository files: 79 supplied files (including documented preparation edits), three images extracted from the supplied presentation, and 22 added documentation, maintenance or review-helper files. All 18 frontend source files matched the supplied dashboard after whitespace normalization. Eight embedded source/header files matched their originals after excluding comments and the documented diagnostic-text translation. AP configuration changes are recorded separately. All 46 mechanical files, the PCB project and the voice workbook matched their source hashes, and all 17 English command-reference rows matched the workbook.
+
+Four host checks passed again with Python 3.12.14. This records a tested interpreter, not an inferred minimum version. No firmware behavior changed in this review, and the firmware build figures above remain the October 15 build results.
+
+Inherited presentation notes about purification benefits and safety were revised to describe design intent and the available evidence. Code comments about timing, servo waiting and temperature-based power limiting were corrected without changing the program. The six-slide presentation passed package/import checks and a render comparison, with only the desiccant-layer label changing visibly.

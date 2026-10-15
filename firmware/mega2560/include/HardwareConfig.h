@@ -39,7 +39,7 @@ const uint8_t SERVO_IN_PIN  = 12; // Input servo.
 const int SERVO_STOP = 90;        // Command value used to stop the servo.
 const int SERVO_ROTATE_FWD = 120; // Command value for forward rotation. Adjust if the direction is reversed.
 
-// Calibrated rotation time used to approximate a 60-degree servo movement.
+// Configured duration intended to approximate a 60-degree servo movement.
 // Fine-tune this value according to the actual hardware test result.
 const unsigned long SERVO_ROTATION_TIME_60 = 200;
 const unsigned long DROP_WAIT_TIME = 1000; // Wait time for material to fall by gravity, in milliseconds.
@@ -83,7 +83,7 @@ struct SystemState {
 
     // Peltier temperature and actual hardware control.
     float peltierTemp = 0.0;     // Peltier hot-side temperature.
-    int actualPwmLevel = 0;      // Actual PWM level after temperature-based current limiting.
+    int actualPwmLevel = 0;      // Actual PWM level after temperature-based power limiting.
 
     // Control states.
     String uvLampState = "off";

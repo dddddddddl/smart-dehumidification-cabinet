@@ -48,7 +48,7 @@ The ESP8266 is the network/interface layer. The ATmega2560 calculates physical o
 
 ## Explore the dashboard without hardware
 
-From the repository root, with Python 3.10 or newer:
+From the repository root, with Python 3:
 
 ```bash
 python3 tools/preview_server.py

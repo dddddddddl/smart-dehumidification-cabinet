@@ -6,6 +6,8 @@ Both supplied controllers use **19200 baud**. The Mega uses `Serial2`; the ESP82
 
 ### Mega to ESP8266
 
+Illustrative packet only: the numbers below show the message format and are not a recorded hardware measurement.
+
 ```json
 {"t":25.4,"h":62.0,"iaq":42,"w_lvl":"normal","uv":"off","auto":"on","p_lvl":35,"status":"running"}
 ```
@@ -56,4 +58,4 @@ The original control handlers accept GET requests and have no application authen
 
 The state-change clock and receive clock are separate. Unchanged recurring telemetry keeps a device online while the change-age display continues to increase.
 
-UV/auto/power commands set manual-override latches in the supplied ESP8266 source. The latches are not cleared by a subsequent confirmation frame, so their display values can diverge from later Mega telemetry. Target humidity is local because the Mega status frame omits it. A page toggle therefore indicates a requested/local state, not independently confirmed physical execution.
+UV, automatic-mode and power-level commands set manual-override latches in the supplied ESP8266 source. The latches are not cleared by a subsequent confirmation frame, so their display values can diverge from later Mega telemetry. Target humidity is local because the Mega status frame omits it. A page toggle therefore indicates a requested/local state, not independently confirmed physical execution.

@@ -63,7 +63,7 @@ public:
 PIDController humiPid(-4.0, -0.2, -0.1, sysState.targetHumidity);
 
 // Temperature protection PID. Limits power to prevent overheating.
-// The safety limit is set to 60 C. A high proportional gain quickly reduces output as the temperature approaches this limit.
+// A 60 C setpoint controls the maximum allowed output.
 PIDController tempPid(15.0, 1.0, 0.5, 60.0);
 
 // Function declarations
@@ -212,7 +212,7 @@ void loop() {
         sysState.waterLevel = "normal";
     }
 
-    // 2. Run environmental reading and dual-PID control on a strict 1-second time base.
+    // 2. Schedule environmental reading and dual-PID control about once per second.
     static unsigned long lastControlTimer = 0;
     if (millis() - lastControlTimer > 1000) {
 
@@ -448,7 +448,7 @@ void processMaterialChangeTask() {
         servoPhase = 2;
         servoTimer = currentTime;
     }
-    // Phase 2: the output port has stopped. Wait 500 ms so the old material can drop out by gravity.
+    // Phase 2: wait DROP_WAIT_TIME milliseconds for old material to fall by gravity.
     else if (servoPhase == 2 && currentTime - servoTimer >= DROP_WAIT_TIME) {
         servoIn.write(SERVO_ROTATE_FWD); // Start rotating the input servo.
         servoPhase = 3;
@@ -460,7 +460,7 @@ void processMaterialChangeTask() {
         servoPhase = 4;
         servoTimer = currentTime;
     }
-    // Phase 4: finish the sequence safely.
+    // Phase 4: finish the sequence.
     else if (servoPhase == 4) {
         Serial.println("[INFO] Material Change Completed!");
         servoPhase = 0; // The sequence is complete.
@@ -677,7 +677,7 @@ void saveUserSettings() {
 }
 void K0_ISR() {
     unsigned long currentTime = millis(); // millis does not increment inside the ISR, but reading the current value is safe.
-    // 200 ms hardware debounce cooldown.
+    // 200 ms software debounce cooldown.
     if (currentTime - lastInterruptTime > 200) {
         k0InterruptTriggered = true; // Set the flag.
         lastInterruptTime = currentTime;

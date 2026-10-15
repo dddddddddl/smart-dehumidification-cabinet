@@ -26,7 +26,7 @@ Libraries remain declared by the supplied version ranges: OneWire, DallasTempera
 - The fan runs when output is nonzero, UV is on, or Peltier temperature exceeds 45 °C. The supplied sleep branch overrides this and turns the fan, UV, PWM and backlight off.
 - The material sequence drives continuous-rotation servos by timed pulses: output servo, wait for gravity drop, input servo, stop. No measured position feedback is included.
 
-The PID implementation is a discrete update with clamped integral and no explicit `dt` term; its gains correspond to the original loop timing. No PID retuning or control-law change was made in preparation.
+The PID implementation is a discrete update with clamped integral and no explicit `dt` term. Its effective response depends on update timing, which can vary with other work in the main loop. No PID retuning or control-law change was made in preparation.
 
 ## Main I/O
 

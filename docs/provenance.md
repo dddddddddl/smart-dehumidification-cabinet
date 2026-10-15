@@ -2,7 +2,7 @@
 
 ## Source coverage
 
-All materials come from the supplied `MEC202 Demo.zip`, except the separately supplied certificate, which is not published. The archive contains one Mega firmware project, one ESP8266 project with frontend assets, a serial mock script, documentation, one presentation/video, one PCB project, 46 mechanical files and voice-module materials.
+Original project artifacts come from the supplied `MEC202 Demo.zip`. The separately supplied certificate supports the award description and is not published. English documentation, the command-table export and repository-review helpers were added during preparation, as listed below. The archive contains one Mega firmware project, one ESP8266 project with frontend assets, a serial mock script, documentation, one presentation/video, one PCB project, 46 mechanical files and voice-module materials.
 
 There are no competing source-code versions requiring a guessed “latest” selection. Mechanical variants with similar names/sizes have different hashes and are all preserved. The original assembly directory and native filenames are retained.
 
@@ -33,7 +33,9 @@ The raw source ZIP remains unchanged locally. An owner-only file disposition lis
 - Preserved the voice XLSX and hardware files unchanged; retained the voice binary locally pending redistribution permission. Exported the voice table to readable English CSV without modifying the generator template.
 - Replaced the video’s first 11 seconds with an English title card to remove the participant roster, retaining the timeline and audio; kept the original locally.
 - Normalized text-file line endings without changing frontend behavior.
-- Removed names/student identifiers from editable presentation text and summarized the technical work areas. Corrected text overlap, adsorption terminology and unsupported efficacy wording; clarified that voice integration remains unverified.
+- Corrected inherited comments that overstated timing/calibration or mislabeled temperature-based power limiting as current limiting. These edits did not change embedded application logic.
+- Labeled protocol examples as illustrative and removed an unestablished Python minimum version.
+- Removed names/student identifiers and the workload table from the presentation. Corrected text overlap, adsorption terminology and unsupported efficacy wording; clarified that voice integration remains unverified. A subsequent factual review also revised inherited speaker notes about purification and safety to distinguish design intent from measured results.
 
 No PID tuning, pin reassignment, relay control-law change or binary patching was performed. Existing voice-index, thermal-failure, target-persistence and optimistic-state limitations are documented rather than silently redesigned without hardware evidence.
 
