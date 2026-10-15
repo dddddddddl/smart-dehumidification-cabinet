@@ -7,7 +7,7 @@
 | [Validation](validation.md) | Executed checks and hardware boundaries |
 | [Provenance](provenance.md) | Source selection, preparation changes and exclusions |
 | [English presentation](presentation/project_overview.pptx) | Six-slide overview with editable names/student identifiers removed |
-| [Original demonstration](media/README.md) | Separately packaged video and checksum |
+| [Project demonstration](media/README.md) | Separately packaged video and checksum |
 | [Hardware](../hardware/README.md) | PCB, native CAD and meshes |
 | [Voice module](../voice/README.md) | Original template, English command reference and binary availability |
 

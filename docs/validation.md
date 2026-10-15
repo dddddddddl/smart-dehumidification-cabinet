@@ -38,7 +38,7 @@ pio run -d firmware/esp8266 -t buildfs
 
 The six-slide English presentation was rendered and checked during its names/IDs cleanup. Structural package and import checks passed. Decorative images extending outside slide boundaries follow the original design and were not treated as measured engineering content.
 
-Native hardware files, the original voice workbook and the original demonstration are preserved by byte-level hashes. The voice binary is preserved locally with its hash documented, pending redistribution permission. No award image is included. All 90 source-file dispositions were accounted for. English source/authored text, local documentation/frontend links, original AP-value exclusion and editable presentation identity removal passed the publication audit.
+Native hardware files and the original voice workbook are preserved by byte-level hashes. The original demonstration is retained locally; its public copy replaces the first 11 seconds with an English title card, preserves duration/audio and is re-encoded. The voice binary is preserved locally with its hash documented, pending redistribution permission. The public video’s 178.5-second duration and audio-track presence were checked. Title/footage frames were viewed; two-second OCR sampling found no known participant names or student identifiers. No award image is included. All 90 source-file dispositions were accounted for. English source/authored text, local documentation/frontend links, original AP-value exclusion and editable presentation identity removal passed the publication audit.
 
 ## Hardware boundaries
 

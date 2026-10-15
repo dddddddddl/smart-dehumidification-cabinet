@@ -17,7 +17,7 @@ There are no competing source-code versions requiring a guessed “latest” sel
 | `3DprintModels` | `hardware/mechanical` |
 | `JLCpcbDesign.epro2` | `hardware/pcb/dehumidifier.epro2` |
 | `VoiceRecognitionModuleFirmware` | `voice/` plus an English CSV companion |
-| Demonstration slides/video | Anonymized presentation and separately packaged original video |
+| Demonstration slides/video | Anonymized presentation and separately packaged video with replacement title card |
 
 The raw source ZIP remains unchanged locally. An owner-only file disposition list records every original entry and its destination or reason for exclusion; it is not added to the public project.
 
@@ -31,6 +31,8 @@ The raw source ZIP remains unchanged locally. An owner-only file disposition lis
 - Added `--port` / `--baud` options to the original serial mock and activated its previously unused 60-second IAQ warm-up transition. The generated numeric value is synthetic.
 - Added a localhost-only synthetic dashboard preview and four host checks for supplied command/reference behavior.
 - Preserved the voice XLSX and hardware files unchanged; retained the voice binary locally pending redistribution permission. Exported the voice table to readable English CSV without modifying the generator template.
+- Replaced the video’s first 11 seconds with an English title card to remove the participant roster, retaining the timeline and audio; kept the original locally.
+- Normalized text-file line endings without changing frontend behavior.
 - Removed names/student identifiers from editable presentation text and replaced the contribution-name column with work areas. Corrected text overlap, adsorption terminology and unsupported efficacy wording; clarified that voice integration remains unverified. No individual contribution claim was added.
 
 No PID tuning, pin reassignment, relay control-law change or binary patching was performed. Existing voice-index, thermal-failure, target-persistence and optimistic-state limitations are documented rather than silently redesigned without hardware evidence.
