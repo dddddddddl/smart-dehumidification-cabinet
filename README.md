@@ -84,7 +84,7 @@ See [validation.md](docs/validation.md) for actual toolchain versions, test scop
 
 ## Recognition
 
-**Second Prize — 2025 “Keyou Cup”, 4th Jiangsu Provincial University Intelligent Robot Creativity Competition.** This is an English translation of the title on the supplied project award certificate.
+**Second Prize — “Keyou Cup”, 4th Jiangsu Provincial University Intelligent Robot Creativity Competition.** This is an English translation of the title on the supplied project award certificate.
 
 ## Materials and scope
 
