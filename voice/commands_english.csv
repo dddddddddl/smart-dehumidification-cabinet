@@ -1,0 +1,18 @@
+semantic_tag,command_phrase,type,spoken_response,speech_mode,send_frame,receive_frame
+3,HEY-SMART-DRYER,wake word,I am ready,active,AA 55 03 00 FB,AA 55 03 00 FB
+11,TURN-ON-AUTO-MODE,command,auto mode enabled,active,AA 55 00 01 FB,AA 55 00 01 FB
+12,ENABLE-AUTO-MODE,command,auto mode enabled,active,AA 55 00 02 FB,AA 55 00 02 FB
+13,TURN-ON-DEHUMIDIFIER,command,auto mode enabled,active,AA 55 00 03 FB,AA 55 00 03 FB
+14,START-DEHUMIDIFIER,command,auto mode enabled,active,AA 55 00 04 FB,AA 55 00 04 FB
+15,START-AUTO-MODE,command,auto mode enabled,active,AA 55 00 05 FB,AA 55 00 05 FB
+16,AUTO-DEHUMIDIFY-ON,command,auto mode enabled,active,AA 55 00 06 FB,AA 55 00 06 FB
+17,TURN-OFF-DEHUMIDIFIER,command,auto mode disabled,active,AA 55 00 07 FB,AA 55 00 07 FB
+18,TURN-OFF-AUTO-MODE,command,auto mode disabled,active,AA 55 00 08 FB,AA 55 00 08 FB
+19,STOP-DEHUMIDIFIER,command,auto mode disabled,active,AA 55 00 09 FB,AA 55 00 09 FB
+19,STOP-AUTO-MODE,command,auto mode disabled,active,AA 55 00 09 FB,AA 55 00 09 FB
+20,TURN-ON-UV-LIGHT,command,uv light turned on,active,AA 55 00 0A FB,AA 55 00 0A FB
+21,ENABLE-UV-LIGHT,command,uv light turned on,active,AA 55 00 0B FB,AA 55 00 0B FB
+22,TURN-OFF-UV-LIGHT,command,uv light turned off,active,AA 55 00 0C FB,AA 55 00 0C FB
+22,DISABLE-UV-LIGHT,command,uv light turned off,active,AA 55 00 0D FB,AA 55 00 0D FB
+23,CHANGE-MATERIAL,command,changing material,active,AA 55 00 0E FB,AA 55 00 0E FB
+23,CHANGE-SILICA,command,changing material,active,AA 55 00 0F FB,AA 55 00 0F FB

@@ -1,0 +1,9 @@
+.DS_Store
+__MACOSX/
+.pio/
+.venv/
+__pycache__/
+*.py[cod]
+.vscode/
+local_config.h
+.env

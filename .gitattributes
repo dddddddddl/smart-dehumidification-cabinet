@@ -1,0 +1,13 @@
+* text=auto
+*.cpp text eol=lf
+*.h text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.md text eol=lf
+*.SLDPRT binary
+*.SLDASM binary
+*.STL binary
+*.epro2 binary
+*.bin binary
+*.xlsx binary
+*.pptx binary

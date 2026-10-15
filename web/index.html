@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Dehumidifier</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div class="wrap app-shell">
+    <header class="app-header">
+      <button type="button" class="icon-btn" id="backBtn" aria-label="Back">&lt;</button>
+      <div class="header-center">
+        <h1>Smart Dehumidifier</h1>
+        <div class="status-pill" id="onlineBadge">Offline</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-view is-active" id="pageViewPrimary">
+      <section class="section hero-stats" id="heroStats">
+        <article class="hero-card">
+          <div class="hero-split">
+            <div class="hero-cell">
+              <span class="label hero-label">
+                <img class="label-icon" src="/assets/icon-temp.svg" alt="" aria-hidden="true">
+                Temp
+              </span>
+              <span class="value hero-value" id="tempValue">
+                <span class="hero-number" id="tempNumber">0.0</span>
+                <span class="hero-unit" id="tempUnit">°C</span>
+              </span>
+            </div>
+            <div class="hero-cell">
+              <span class="label hero-label">
+                <img class="label-icon" src="/assets/icon-humidity.svg" alt="" aria-hidden="true">
+                Humidity
+              </span>
+              <span class="value hero-value" id="humidityValue">
+                <span class="hero-number" id="humidityNumber">0.0</span>
+                <span class="hero-unit" id="humidityUnit">%</span>
+              </span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section grid-stats" id="gridStats">
+        <div class="grid two">
+          <article class="card">
+            <span class="icon-badge">
+              <img class="badge-icon" src="/assets/icon-iaq.svg" alt="" aria-hidden="true">
+            </span>
+            <span class="label">IAQ</span>
+            <span class="value" id="iaqValue">0</span>
+          </article>
+          <article class="card">
+            <span class="icon-badge">
+              <img class="badge-icon" src="/assets/icon-water.svg" alt="" aria-hidden="true">
+            </span>
+            <span class="label">Water Level</span>
+            <span class="value" id="waterLevelValue">Unknown</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section quick-actions" id="quickActions">
+        <h2>Quick Actions</h2>
+        <div class="actions-list">
+          <button type="button" id="uvToggleBtn" class="action-row" data-state="off" aria-checked="false">
+            <span class="action-left">
+              <span class="icon-badge">
+                <span class="icon-stack" aria-hidden="true">
+                  <img class="badge-icon icon-layer icon-off" src="/assets/icon-uv.svg" alt="">
+                  <img class="badge-icon icon-layer icon-on" src="/assets/icon-uv-on.svg" alt="">
+                </span>
+              </span>
+              <span class="action-text">UV Light</span>
+            </span>
+            <span class="toggle-switch" aria-hidden="true">
+              <span class="toggle-thumb"></span>
+            </span>
+          </button>
+
+          <button type="button" id="autoToggleBtn" class="action-row" data-state="off" aria-checked="false">
+            <span class="action-left">
+              <span class="icon-badge">
+                <span class="icon-stack" aria-hidden="true">
+                  <img class="badge-icon icon-layer icon-off" src="/assets/icon-auto.svg" alt="">
+                  <img class="badge-icon icon-layer icon-on" src="/assets/icon-auto-on.svg" alt="">
+                </span>
+              </span>
+              <span class="action-text">Auto Mode</span>
+            </span>
+            <span class="toggle-switch" aria-hidden="true">
+              <span class="toggle-thumb"></span>
+            </span>
+          </button>
+
+          <div id="targetHumidityWrap" class="target-humidity-wrap" aria-hidden="true">
+            <div id="targetHumidityClip" class="target-humidity-clip">
+              <div class="target-humidity-panel">
+                <h3 class="target-humidity-title">Target Humidity</h3>
+                <button type="button" id="targetDisplayBtn" class="target-display-btn" aria-expanded="false" aria-haspopup="dialog">
+                  <span class="target-value-track">
+                    <span id="targetValueText" class="target-value-text">65</span>
+                  </span>
+                  <span class="target-unit">%</span>
+                  <span class="target-picker-trigger" aria-hidden="true">
+                    <img class="target-picker-icon" src="/assets/icon-target.svg" alt="">
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="manualChangeBtn" class="action-button action-button-material wide" aria-busy="false" aria-label="Change Material">
+            <span class="material-inner">
+              <img class="btn-icon material-icon" src="/assets/icon-change.svg" alt="">
+              <span class="material-label">Change Material</span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section power-level" id="powerLevelSection">
+        <div class="power-level-head">
+          <h2>Dehumidification Level</h2>
+          <span class="power-level-pill"><span id="powerValue">0</span>%</span>
+        </div>
+        <div class="buttons power-buttons">
+          <span class="power-indicator" aria-hidden="true"></span>
+          <button type="button" class="power-btn" data-level="0">0</button>
+          <button type="button" class="power-btn" data-level="40">40</button>
+          <button type="button" class="power-btn" data-level="70">70</button>
+          <button type="button" class="power-btn" data-level="100">100</button>
+        </div>
+      </section>
+
+      <section class="section footer-update" id="footerUpdateSection">
+        <div class="last-update-row">
+          <img class="last-update-icon" src="/assets/icon-last-update.svg" alt="" aria-hidden="true">
+          <span id="lastUpdateText">LAST UPDATE: 0S AGO</span>
+        </div>
+      </section>
+      </div>
+
+      <div class="page-view" id="pageViewSecondary" aria-hidden="true">
+        <div class="secondary-main">
+          <div class="secondary-main-top">
+            <div class="secondary-grid">
+              <article class="secondary-card secondary-card-accent">
+                <div class="secondary-card-flip-inner">
+                  <div class="secondary-card-face secondary-card-face-front">
+                    <img class="secondary-card-icon" src="/assets/secondary-temp.svg" alt="" aria-hidden="true">
+                    <span class="secondary-card-label">TEMP</span>
+                    <span class="secondary-card-value secondary-card-value-large" id="secondaryTempValue">0.0</span>
+                    <span class="secondary-card-unit">°C</span>
+                  </div>
+                  <div class="secondary-card-face secondary-card-face-back" aria-hidden="true">
+                    <div class="secondary-card-back-copy secondary-card-back-copy-single">
+                      <div class="secondary-card-back-title" id="secondaryTempStatusText">Ideal</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="secondary-card secondary-card-accent">
+                <div class="secondary-card-flip-inner">
+                  <div class="secondary-card-face secondary-card-face-front">
+                    <img class="secondary-card-icon" src="/assets/secondary-humidity.svg" alt="" aria-hidden="true">
+                    <span class="secondary-card-label">HUMIDITY</span>
+                    <span class="secondary-card-value secondary-card-value-large" id="secondaryHumidityValue">0.0</span>
+                    <span class="secondary-card-unit">%</span>
+                  </div>
+                  <div class="secondary-card-face secondary-card-face-back" aria-hidden="true">
+                    <div class="secondary-card-back-copy secondary-card-back-copy-single">
+                      <div class="secondary-card-back-title" id="secondaryHumidityStatusText">Ideal</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="secondary-card secondary-card-dark">
+                <div class="secondary-card-flip-inner">
+                  <div class="secondary-card-face secondary-card-face-front">
+                    <img class="secondary-card-icon" src="/assets/secondary-iaq.svg" alt="" aria-hidden="true">
+                    <span class="secondary-card-label">IAQ</span>
+                    <span class="secondary-card-value secondary-card-value-iaq" id="secondaryIaqValue">0</span>
+                  </div>
+                  <div class="secondary-card-face secondary-card-face-back" aria-hidden="true">
+                    <div class="secondary-card-back-copy secondary-card-back-copy-single">
+                      <div class="secondary-card-back-title" id="secondaryIaqStatusText">Waiting</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="secondary-card secondary-card-dark secondary-card-water">
+                <div class="secondary-card-flip-inner">
+                  <div class="secondary-card-face secondary-card-face-front">
+                    <img class="secondary-card-icon" src="/assets/secondary-water-level.svg" alt="" aria-hidden="true">
+                    <span class="secondary-card-label">WATER LEVEL</span>
+                    <span class="secondary-card-value secondary-card-value-water" id="secondaryWaterLevelValue">unknown</span>
+                  </div>
+                  <div class="secondary-card-face secondary-card-face-back" aria-hidden="true">
+                    <div class="secondary-card-back-copy secondary-card-back-copy-single">
+                      <div class="secondary-card-back-title" id="secondaryWaterStatusText">Sufficient</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="secondary-main-bottom">
+            <div class="secondary-start-wrap">
+              <button type="button" class="start-btn" id="startBtn" aria-label="Start">
+                <span class="start-btn-glow" aria-hidden="true"></span>
+                <span class="start-btn-core" aria-hidden="true">
+                  <svg width="100" height="100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="start-btn-icon">
+                    <path d="M 16 12 L 16 36 L 36 24 Z" stroke="#a9c59c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="start-btn-shadow" aria-hidden="true"></span>
+              </button>
+              <div class="secondary-footer-note">Smart Dehumidifier Control</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="pickerBackdrop" class="picker-backdrop" hidden></div>
+  <div id="humidityPicker" class="humidity-picker" role="dialog" aria-modal="true" aria-label="Target humidity picker" hidden>
+    <div class="picker-core">
+      <div class="picker-selection-highlight" aria-hidden="true"></div>
+      <div id="humidityPickerScroll" class="picker-scroll"></div>
+      <div class="picker-fade picker-fade-top" aria-hidden="true"></div>
+      <div class="picker-fade picker-fade-bottom" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
