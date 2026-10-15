@@ -33,7 +33,7 @@ The raw source ZIP remains unchanged locally. An owner-only file disposition lis
 - Preserved the voice XLSX and hardware files unchanged; retained the voice binary locally pending redistribution permission. Exported the voice table to readable English CSV without modifying the generator template.
 - Replaced the video’s first 11 seconds with an English title card to remove the participant roster, retaining the timeline and audio; kept the original locally.
 - Normalized text-file line endings without changing frontend behavior.
-- Removed names/student identifiers from editable presentation text and replaced the contribution-name column with work areas. Corrected text overlap, adsorption terminology and unsupported efficacy wording; clarified that voice integration remains unverified. No individual contribution claim was added.
+- Removed names/student identifiers from editable presentation text and summarized the technical work areas. Corrected text overlap, adsorption terminology and unsupported efficacy wording; clarified that voice integration remains unverified.
 
 No PID tuning, pin reassignment, relay control-law change or binary patching was performed. Existing voice-index, thermal-failure, target-persistence and optimistic-state limitations are documented rather than silently redesigned without hardware evidence.
 

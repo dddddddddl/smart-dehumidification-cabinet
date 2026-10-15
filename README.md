@@ -84,7 +84,7 @@ See [validation.md](docs/validation.md) for actual toolchain versions, test scop
 
 ## Recognition
 
-**Second Prize — 2025 “Keyou Cup”, 4th Jiangsu Provincial University Intelligent Robot Creativity Competition.** This is an English translation of the title on the supplied project award certificate. The certificate image and participant names are intentionally not published in this repository.
+**Second Prize — 2025 “Keyou Cup”, 4th Jiangsu Provincial University Intelligent Robot Creativity Competition.** This is an English translation of the title on the supplied project award certificate.
 
 ## Materials and scope
 
@@ -92,4 +92,4 @@ Native SolidWorks parts/assemblies retain their original filenames so internal r
 
 The supplied voice binary, retained locally pending redistribution permission, is labeled UART/115200, while the main firmware reads voice results over I²C. The matching module configuration is not established by these files alone. The [voice guide](voice/README.md) also records command-index discrepancies without inventing a replacement firmware.
 
-The [project presentation](docs/presentation/project_overview.pptx) retains the technical content with names/student identifiers removed from editable text. The [demonstration video](docs/media/README.md) is provided separately as a release asset with an anonymized English title card. No claim of sole authorship is made for the supplied project materials, and no repository-wide open-source license has been added; see [third-party notices](THIRD_PARTY_NOTICES.md).
+The [project presentation](docs/presentation/project_overview.pptx) provides a six-slide technical overview. The [demonstration video](docs/media/README.md) is available as a release asset. See [third-party notices](THIRD_PARTY_NOTICES.md) for dependency and licensing information.
